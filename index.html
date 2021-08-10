@@ -3,10 +3,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/yukitfoo/CursorDataCollected/main/index.css">
+    <!-- comment in when pushing -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://raw.githubusercontent.com/yukitfoo/CursorDataCollected/main/index.css"> -->
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Test</h1>
+    <h1 id="header">
+        Data Collection
+        <small class="text-muted">for Cursor Prediction Machine Learning Algorithm</small>
+    </h1>
+    <div class="container-fluid" id="desc">
+        <!-- About me and further explanation -->
+        <!-- Using accoridan from bootstrap -->
+        <div class="accordion" id="exp">
+            <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            About Me
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p class="aboutMe">Hi, I am a 2nd year Electronic and Engineering(MEng) student at the University of Glasgow, finding a meaningful way to spend my summer break. 
+                                            Being fascinated by the possibilities being made possible by Machine Learning, I am trying to challenge myself to fit a model to predict the movement of the user's cursor using a Neural Network.
+                                            There will be a further explanation on how the Neural Network will be implemented below, as well as any challenges faced along the way.
+                                            Personally, this would be the first time implementing a Neural Network model, it would be shocking for it to work right off the bat without any challenges along the way. 
+                                            I would be satisfied to get to play around with how features and layers can significantly alter the hypothesis of the model and hopefully publish all my mistakes, challenges and errors in another page.
+                                            I am confident that regardless of whether this works, I will end up being more comfortable with working on linear algebra needed to implement a neural network.
+                                        </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="" class="card-img-top" alt="">
+                                            <div class="card-body">
+                                              <h5 class="card-title">Card title</h5>
+                                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+              </div>
+              <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Further Explanation of the Neural Network Implementation
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p class="furtherExp">
+                                The main idea is to train a Neural Network with 80% of the data set provided and try various features to get the best hypothesis, h<sub>θ</sub>(x); whereby x is the input values.
+                                h<sub>θ</sub>(x) will output the x and y coordinates of the position of your cursor after 0.5 second. Hopefully, the final product will actually predict the position of the cursor relatively well.
+                                
+                                The Neural Network works by using an initial set of weights(θ<sup>i</sup><sub>(l)</sub>), where l corresponds to the layer of activation units or inputs(if first layer) to use to calculate the sum of θ with the activation unit of the corresponding i value.
+                                Since, it is supervised Machine Learning, the results(y) can be used with the hypothesis to calculate a cost function J(θ), representing how far the predicted value deviated from the actual result(y).
+                                Using an algorithm to minimize J(θ), we can get optimized values of the weights, θ.
+
+                                For a good model, the sum of θ<sup>i</sup> with its corresponding input values(x<sup>i</sup>) will give an output that is close to the result.
+                            </p>
+                        </div>
+                    </div>
+              </div>
+        </div>
+
+
+
+        <p class="user">
+            There is a box below this paragraph that records the the coordinates of your cursor every 0.2s in percentage of the width and height of the box.
+            Clicking the start button will start tracking the coordinates of your cursor after 3 seconds.
+        </p>
+        <p class="dataDesc">
+            Data collected will be the initial posiiton of the cursor. Then the distance and angle needed to reach the consecutive position of the cursor.
+            All of which will be calculated and sent to the database automatically by pressing the submit button after recording all 10 points. 
+        </p>
+    </div>
+    <div class="container-fluid" id="record">
+        <!-- code for area used to record the corrdinates -->
+    </div>
+    <div class="container-fluid" id="furtherExplanation">
+        <p class="furtherExplanation">
+            The main idea is to train a Neural Network with 80% of the data set provided and try various features to get the best hypothesis, h<sub>θ</sub>(x); whereby x is the input values.
+            h<sub>θ</sub>(x) will output the x and y coordinates of the position of your cursor after 0.5 second. Hopefully, the final product will actually predict the position of the cursor relatively well.
+            
+            The Neural Network works by using an initial set of weights(θ<sup>i</sup><sub>(l)</sub>), where l corresponds to the layer of activation units or inputs(if first layer) to use to calculate the sum of θ with the activation unit of the corresponding i value.
+            Since, it is supervised Machine Learning, the results(y) can be used with the hypothesis to calculate a cost function J(θ), representing how far the predicted value deviated from the actual result(y).
+            Using an algorithm to minimize J(θ), we can get optimized values of θ.
+        </p>
+    </div>
+    <div class="container-fluid" id="challenges">
+        <p class="challenges">
+
+        </p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
 </body>
 </html>
